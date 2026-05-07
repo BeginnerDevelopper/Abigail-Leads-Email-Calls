@@ -1,0 +1,1887 @@
+{
+  "name": "🏁Send Initial Email - Brevo Campaign",
+  "nodes": [
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "=1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Email",
+              "lookupValue": "={{ $json.body.email }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        480,
+        192
+      ],
+      "id": "6416cf75-69a8-415d-a155-68dbc9d50a67",
+      "name": "Extract Data (Email Pending)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "lead_id": "={{ $json.lead_id }}",
+            "Email_listo": "TRUE",
+            "Status": "pending",
+            "Call_listo": "undefined",
+            "Reminder_sent": "TRUE"
+          },
+          "matchingColumns": [
+            "lead_id"
+          ],
+          "schema": [
+            {
+              "id": "lead_id",
+              "displayName": "lead_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "County",
+              "displayName": "County",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Neighborhood",
+              "displayName": "Neighborhood",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Instagram",
+              "displayName": "Instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_listo",
+              "displayName": "Email_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reminder_sent",
+              "displayName": "Reminder_sent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Call_date",
+              "displayName": "Call_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Call_listo",
+              "displayName": "Call_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Interested",
+              "displayName": "Interested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Follow_up",
+              "displayName": "Follow_up",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Analysis_call",
+              "displayName": "Analysis_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        192
+      ],
+      "id": "f7012bfe-e993-4776-ad7e-5c797305daab",
+      "name": "Update Email Status",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        848,
+        192
+      ],
+      "id": "268c792e-f7ba-4b27-8493-860ac9acba7f",
+      "name": "Wait 3 Days",
+      "webhookId": "0be95a8b-7452-4ec3-9443-f038a7670e46"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "lead_id",
+              "lookupValue": "={{ $('Extract Data (Email Pending)').item.json.lead_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1856,
+        192
+      ],
+      "id": "4c5ea4a5-d4e9-49f1-bab7-0ce6c56423ef",
+      "name": "Extract Data (Call Pending)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "lead_id": "={{ $('Get data from Gmass').item.json.lead_id }}",
+            "Call_listo": "=completed",
+            "Status": "=success",
+            "Interested": "={{ $json.interested }}",
+            "Analysis_call": "={{ $('VAPI Post-Call Webhook').item.json.body.message.artifact.structuredOutputs['39edbe7f-b402-4647-a6bb-3a0c8925385b'].result }}",
+            "Notes": "={{ \"Gmas sent on \" + $('VAPI Post-Call Webhook').item.json.body.message.call.createdAt }}",
+            "Follow_up": "={{ $json.followup }}",
+            "Call_date": "={{ DateTime.fromISO($('VAPI Post-Call Webhook').item.json.body.message.call.createdAt).setZone('America/New_York').toFormat('dd/MM/yyyy HH:mm') }}"
+          },
+          "matchingColumns": [
+            "lead_id"
+          ],
+          "schema": [
+            {
+              "id": "lead_id",
+              "displayName": "lead_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "County",
+              "displayName": "County",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Neighborhood",
+              "displayName": "Neighborhood",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Instagram",
+              "displayName": "Instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Call_date",
+              "displayName": "Call_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email_listo",
+              "displayName": "Email_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Call_listo",
+              "displayName": "Call_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Interested",
+              "displayName": "Interested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Follow_up",
+              "displayName": "Follow_up",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Analysis_call",
+              "displayName": "Analysis_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1968,
+        384
+      ],
+      "id": "d15d022e-932e-4a70-b8ca-73a31fdf857a",
+      "name": "Update Call Results",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5eab6a44-475b-4493-ab11-a83365759a44",
+              "leftValue": "={{ $json.lead_id }}",
+              "rightValue": "={{ $json.body.EmailAddress }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": "={{ false }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        1552,
+        384
+      ],
+      "id": "c5bf2b17-2b4b-4cf1-97eb-e121b2a3df97",
+      "name": "Filter"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "f7e7f816-b6ec-4986-9514-39c2393e39a9",
+              "leftValue": "Call_listo",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "14d8855e-4c86-42fb-9c66-46d7ff55a13b",
+              "leftValue": "Reminder_sent",
+              "rightValue": "={{ $json.Reminder_sent.toString() }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        1648,
+        192
+      ],
+      "id": "da5112aa-4da6-4fae-bf3b-0c16dbd6ae1d",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Email",
+              "lookupValue": "={{ $('VAPI Post-Call Webhook').item.json.body.message.call.assistantOverrides.metadata.email }}"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1360,
+        384
+      ],
+      "id": "2e5fd1fb-d6e3-4118-be0d-9b88fcd4c8b2",
+      "name": "Get data from Gmass",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "c53efbd1-b1e5-4ce4-bb76-a76629172522",
+              "leftValue": "={{ $json.body.message.type }}",
+              "rightValue": "end-of-call-report",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        1152,
+        384
+      ],
+      "id": "8f643eaf-bd93-4b1d-b6b0-96b89a276ad8",
+      "name": "Filter status"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "b666c3c3-f677-4720-9b04-0c5cacfad082",
+              "leftValue": "={{ $json.Follow_up }}",
+              "rightValue": "=book_call",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": "={{ false }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2192,
+        384
+      ],
+      "id": "a9e69c5a-07c0-4509-8174-1833d40abaf9",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const webhook = $(\"VAPI Post-Call Webhook\").item.json.body.message;\n\nconst callCreatedAt = webhook.call.createdAt;\nconst callTimeIso = callCreatedAt ? new Date(callCreatedAt).toISOString() : null;\n\nconst structuredOutputs = webhook.artifact?.structuredOutputs || {};\nconst callSummary = Object.values(structuredOutputs).find(v => v.name === \"Call Summary\");\n\n// result puede venir como STRING o como OBJETO — manejamos ambos\nlet results = {};\nconst raw = callSummary?.result;\nif (typeof raw === \"string\") {\n  try { results = JSON.parse(raw); } catch(e) { results = {}; }\n} else if (typeof raw === \"object\" && raw !== null) {\n  results = raw;\n}\n\n// Campos con o sin guion bajo — busca ambas variantes\nconst followUpDate = results.appointment_day  || results.appointmentday  || null;\nlet   followUpTime = results.appointment_time || results.appointmenttime || null;\n\n// Normaliza \"1100\" → \"11:00\" si falta el colon\nif (followUpTime && !followUpTime.includes(\":\")) {\n  followUpTime = followUpTime.slice(0, 2) + \":\" + followUpTime.slice(2);\n}\n\nlet startTimeIso = null;\nlet endTimeIso   = null;\n\nif (followUpDate && followUpTime) {\n  const startObj = new Date(`${followUpDate}T${followUpTime}:00-04:00`);\n  if (!isNaN(startObj.getTime())) {\n    startTimeIso = startObj.toISOString();\n    endTimeIso   = new Date(startObj.getTime() + 30 * 60 * 1000).toISOString();\n  }\n}\n\nconst metadata = webhook.call.assistantOverrides?.metadata || {};\n\nreturn [{\n  json: {\n    callTimeIso,\n    startTimeIso,\n    endTimeIso,\n    durationMinutes: 30,\n    lead_id:    metadata.lead_id   || metadata.leadid   || null,\n    company:    metadata.company   || results.company   || null,\n    email:      metadata.email     || null,\n    follow_up:  results.follow_up  || results.followup  || null,\n    interested: results.interested || null,\n    pain_point: results.pain_point || results.painpoint || null,\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2496,
+        224
+      ],
+      "id": "2ecfe80e-8048-47f3-a71e-a9ce40cf49b3",
+      "name": "Conversion ISO"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cal.com/v2/bookings",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {anade tu API KEY}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"eventTypeId\": 4575033,\n  \"start\": \"{{ $json.startTimeIso }}\",\n  \"responses\": {\n    \"name\": \"{{ $('Get data from Gmass').item.json.Company }}\",\n    \"email\": \"{{ $('Get data from Gmass').item.json.Email }}\",\n    \"notes\": \"Agendado via Genius Astra AI\\n\\nEmpresa: {{ $('Get data from Gmass').item.json.Company }}\\nPain point: {{ $('Update Call Results').item.json.Analysis_call }}\"\n  },\n  \"timeZone\": \"America/New_York\",\n  \"language\": \"es\",\n  \"metadata\": {\n    \"lead_id\": \"{{ $('Get data from Gmass').item.json.lead_id }}\",\n    \"company\": \"{{ $('Get data from Gmass').item.json.Company }}\",\n    \"follow_up\": \"{{ $('Update Call Results').item.json.Follow_up }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2672,
+        224
+      ],
+      "id": "0a399652-7d4a-414f-9819-f0bb6d6d0f7e",
+      "name": "CAL.COM"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.data.responses.email }}",
+        "subject": "=Appointment Confirmed: Your AI Automation Meeting with Genius Astra for {{ $('VAPI Post-Call Webhook').item.json.body.message.assistant.metadata.company }}",
+        "message": "=<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Appointment Confirmation – Genius Astra</title>\n</head>\n<body style=\"margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;font-size:14px;color:#222222;line-height:1.7;\">\n  <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#f4f4f4;padding:32px 0;\">\n    <tr>\n      <td align=\"center\">\n        <table width=\"560\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:560px;background:#ffffff;border-radius:6px;overflow:hidden;border:1px solid #e0e0e0;\">\n\n          <!-- HEADER -->\n          <tr>\n            <td style=\"background:#111111;padding:20px 28px 18px 28px;\">\n              <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                <tr>\n                  <td>\n                    <p style=\"margin:0;font-size:11px;font-weight:700;color:#F5C518;letter-spacing:2px;text-transform:uppercase;\">Genius Astra</p>\n                    <p style=\"margin:4px 0 0 0;font-size:20px;font-weight:700;color:#ffffff;letter-spacing:0.3px;\">Appointment Confirmed ✓</p>\n                  </td>\n                  <td align=\"right\">\n                    <div style=\"background:#F5C518;border-radius:50%;width:44px;height:44px;text-align:center;line-height:44px;font-size:20px;\">📅</div>\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n          <!-- GOLD LINE -->\n          <tr><td style=\"background:#F5C518;height:3px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n\n          <!-- BODY -->\n          <tr>\n            <td style=\"padding:28px 28px 8px 28px;\">\n\n              <p style=\"margin:0 0 16px 0;\">Hi <strong>{{ $('Conversion ISO').item.json.company }}</strong>,</p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                Thank you for your time today! It was a pleasure discussing how <strong>Genius Astra</strong>'s\n                AI solutions can drive growth and efficiency for <strong>{{ $('Conversion ISO').item.json.company }}</strong>.\n              </p>\n\n              <p style=\"margin:0 0 16px 0;\">\n                This email confirms your upcoming meeting. We'll dive deeper into your needs and explore\n                the best AI automation strategies for your business. Here are your meeting details:\n              </p>\n\n              <!-- MEETING DETAILS CARD -->\n              <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"\n                     style=\"background:#f9f9f9;border:1px solid #eeeeee;border-radius:6px;margin:0 0 20px 0;\">\n                <tr>\n                  <td style=\"padding:18px 20px;\">\n                    <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                      <tr>\n                        <td style=\"padding:6px 0;border-bottom:1px solid #eeeeee;\">\n                          <span style=\"font-size:12px;color:#888888;text-transform:uppercase;letter-spacing:0.5px;\">Date</span><br>\n                          <strong style=\"color:#111111;\">{{ DateTime.fromISO($('Conversion ISO').item.json.startTimeIso).setZone('America/New_York').toFormat('MMMM dd, yyyy') }}</strong>\n                        </td>\n                      </tr>\n                      <tr>\n                        <td style=\"padding:6px 0;border-bottom:1px solid #eeeeee;\">\n                          <span style=\"font-size:12px;color:#888888;text-transform:uppercase;letter-spacing:0.5px;\">Time</span><br>\n                          <strong style=\"color:#111111;\">{{ DateTime.fromISO($('Conversion ISO').item.json.startTimeIso).setZone('America/New_York').toFormat('h:mm a') }} Eastern Time</strong>\n                        </td>\n                      </tr>\n                      <tr>\n                        <td style=\"padding:6px 0;\">\n                          <span style=\"font-size:12px;color:#888888;text-transform:uppercase;letter-spacing:0.5px;\">Meeting Link</span><br>\n                          <a href=\"{{ $json.data.videoCallUrl }}\" style=\"color:#F5C518;font-weight:700;text-decoration:none;\">https://cal.com/geniusastra</a>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              </table>\n\n              <p style=\"margin:0 0 20px 0;\">We look forward to seeing you soon!</p>\n\n              <!-- CTA BUTTON -->\n              <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 28px 0;\">\n                <tr>\n                  <td style=\"background:#F5C518;border-radius:4px;\">\n                    <a href=\"{{ $json.data.videoCallUrl }}\"\n                       style=\"display:inline-block;padding:11px 26px;font-size:13px;font-weight:700;color:#111111;text-decoration:none;\">\n                      Join the Meeting &rarr;\n                    </a>\n                  </td>\n                </tr>\n              </table>\n\n            </td>\n          </tr>\n\n          <!-- DIVIDER -->\n          <tr><td style=\"padding:0 28px;\"><div style=\"border-top:1px solid #eeeeee;\"></div></td></tr>\n\n          <!-- GOLD LINE -->\n          <tr><td style=\"background:#F5C518;height:3px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n\n          <!-- FIRMA -->\n          <tr>\n            <td style=\"background:#111111;padding:20px 24px 16px 24px;\">\n              <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                <tr>\n                  <td style=\"vertical-align:top;padding-right:20px;\">\n                    <p style=\"margin:0 0 2px 0;font-size:17px;font-weight:700;color:#F5C518;letter-spacing:0.5px;line-height:1.2;\">Valeri Gutierrez</p>\n                    <p style=\"margin:0 0 10px 0;font-size:12px;color:#ffffff;letter-spacing:0.3px;\">Sales Advisor · Genius Astra</p>\n                    <p style=\"margin:0 0 3px 0;font-size:11px;color:#999999;\">📍 Queens, New York</p>\n                    <p style=\"margin:0 0 3px 0;font-size:11px;color:#999999;\">🌐 <a href=\"https://geniusastra.com\" style=\"color:#F5C518;text-decoration:none;\">geniusastra.com</a></p>\n                    <p style=\"margin:0;font-size:11px;color:#999999;\">📸 <a href=\"https://instagram.com/geniusastra\" style=\"color:#F5C518;text-decoration:none;\">@geniusastra</a></p>\n                  </td>\n                  <td style=\"border-left:1px solid #333333;padding:0 0 0 20px;vertical-align:top;\">\n                    <p style=\"margin:0 0 8px 0;font-size:9px;font-weight:700;color:#F5C518;letter-spacing:1px;text-transform:uppercase;\">Our Services</p>\n                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                      <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">⚡ AI Automation</span></td></tr>\n                      <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">🌍 Global Multilingual Expansion</span></td></tr>\n                      <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">✦ AI Branding</span></td></tr>\n                      <tr><td><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">🚀 Strategic Launch</span></td></tr>\n                    </table>\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n          <!-- CTA BANNER -->\n          <tr>\n            <td style=\"background:#F5C518;padding:10px 24px;\">\n              <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n                <tr>\n                  <td><p style=\"margin:0;font-size:11px;font-weight:700;color:#111111;\">📊 Want a FREE market analysis for your business?</p></td>\n                  <td style=\"text-align:right;white-space:nowrap;\">\n                    <a href=\"https://geniusastra.com\" style=\"background:#111111;color:#F5C518;font-size:10px;font-weight:700;padding:5px 12px;text-decoration:none;border-radius:3px;display:inline-block;\">Schedule Here &rarr;</a>\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n\n          <!-- FOOTER -->\n          <tr>\n            <td style=\"background:#0a0a0a;padding:10px 24px;\">\n              <p style=\"margin:0;font-size:9px;color:#555555;line-height:1.5;text-align:center;\">\n                This email and its attachments are confidential and intended exclusively for the indicated recipient.\n                &copy; 2026 Genius Astra &mdash;\n                <a href=\"https://geniusastra.com\" style=\"color:#555555;text-decoration:none;\">geniusastra.com</a>\n              </p>\n            </td>\n          </tr>\n\n          <!-- GOLD LINE BOTTOM -->\n          <tr><td style=\"background:#F5C518;height:2px;font-size:0;line-height:0;\">&nbsp;</td></tr>\n\n        </table>\n      </td>\n    </tr>\n  </table>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        3136,
+        224
+      ],
+      "id": "cca5ace4-c15a-4896-99a9-df13c34840fc",
+      "name": "Send a message",
+      "webhookId": "f48e0987-fc73-4518-978b-481c9a0193cf",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rGsdLu9a3bbdpBQ9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.bland.ai/v1/calls",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {ANADE TU ORG_ KEY}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"phone_number\": \"{{ $json.Phone }}\",\n  \"task\": \"You are Abigail, a friendly and professional outreach specialist calling on behalf of Genius Astra, an AI automation agency based in New York. You are calling {{ $json.Company }} to introduce our AI automation services and explore if they would benefit from streamlining their business operations.\\n\\nYour goal:\\n1. Greet the person warmly and introduce yourself.\\n2. Ask if they are the owner or decision maker.\\n3. Briefly explain that Genius Astra helps businesses like theirs eliminate repetitive tasks, save time, and scale using AI automation.\\n4. Ask about their current biggest operational challenge.\\n5. Based on their response, propose a free 15-minute discovery call with our team.\\n6. If they agree, ask for their preferred date and time.\\n7. If they are not interested, thank them politely and end the call.\\n8. Always be respectful, concise, and never pushy.\\n\\nKey rules:\\n- Never lie or make promises you cannot keep.\\n- If they already have automation, acknowledge it and ask what tools they use.\\n- If they ask technical questions you cannot answer, say the team will clarify on the discovery call.\\n- Keep the call under 10 minutes.\",\n  \"voice\": \"7c4ffd1b-22d0-49ff-9fd6-b43fafc87908\",\n  \"wait_for_greeting\": false,\n  \"record\": true,\n  \"answered_by_enabled\": true,\n  \"noise_cancellation\": false,\n  \"interruption_threshold\": 500,\n  \"block_interruptions\": false,\n  \"max_duration\": 12,\n  \"model\": \"base\",\n  \"language\": \"babel-en\",\n  \"background_track\": \"none\",\n  \"voicemail_action\": \"hangup\",\n  \"temperature\": 0.5,\n  \"webhook\": \"https://solubly-penceless-ellis.ngrok-free.dev/webhook-test/bland-ai-post-call\",\n  \"webhook_events\": [\"call_ended\"],\n  \"summary_prompt\": \"Generate a concise post-call summary in English. Include: 1) Business name, category and location if mentioned. 2) Interest level in Genius Astra AI automation services, specify if they already have an automation solution. 3) Key pain points discussed. 4) Objections raised. 5) Agreed next step: discovery call booked with date and time, requested more info, follow up later, or do not contact. 6) Tone of conversation. Keep it factual and based strictly on the transcript.\",\n  \"analysis_schema\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"interested\": {\n        \"type\": \"string\",\n        \"enum\": [\"yes\", \"no\", \"has_automation\"],\n        \"description\": \"Whether the business is interested. yes=interested, no=not interested, has_automation=already has automation.\"\n      },\n      \"follow_up\": {\n        \"type\": \"string\",\n        \"enum\": [\"book_call\", \"send_information\", \"follow_up_later\", \"dont_contact\"],\n        \"description\": \"Agreed next step after the call.\"\n      }\n    },\n    \"required\": [\"interested\", \"follow_up\"]\n  },\n  \"metadata\": {\n    \"lead_id\": \"{{ $json.lead_id }}\",\n    \"company\": \"{{ $json.Company }}\"\n  },\n  \"request_data\": {\n    \"first_name\": \"{{ $json.Company }}\",\n    \"email\": \"{{ $json.Email }}\",\n    \"service\": \"AI Automation\"\n  },\n  \"json_mode_enabled\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2544,
+        -496
+      ],
+      "id": "4bfbd4a8-0b41-44b5-8e98-23799d4088fa",
+      "name": "Call Bland AI1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.vapi.ai/call",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {ANADE TU API KEY}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"assistantId\": \"56f5497f-93cd-4678-8a7d-82070291676f\",\n  \"customer\": {\n    \"number\": \"{{ '+1' + $json.Phone.replace(/\\D/g, '').slice(-10) }}\"\n  },\n  \"phoneNumberId\": \"a126f909-86ed-4fcc-9fd6-7a5df29a6667\",\n  \"assistantOverrides\": {\n    \"metadata\": {\n      \"lead_id\": \"{{ $json.lead_id }}\",\n      \"company\": \"{{ $json.Company }}\",\n      \"email\": \"{{ $json.Email }}\"\n    }\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2064,
+        192
+      ],
+      "id": "fee3d0df-c589-4981-9085-f02d9ee2dc79",
+      "name": "Call VAPI"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vapi-post-call",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        944,
+        384
+      ],
+      "id": "731e2a2f-c576-4d88-9854-26a1946125a4",
+      "name": "VAPI Post-Call Webhook",
+      "webhookId": "6c4c3be3-e15d-4f1a-aee4-8cc33013a084"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "175a374a-2e9b-4033-8fc2-70447b03b8ed",
+              "name": "followup",
+              "value": "={{ $('VAPI Post-Call Webhook').item.json.body.message.artifact.structuredOutputs['5591e26d-63e0-495e-a585-2527acd6d777'].result.follow_up }}",
+              "type": "string"
+            },
+            {
+              "id": "9a0935a8-b9ec-4b76-bc48-0b0848c8b728",
+              "name": "interested",
+              "value": "={{ $('VAPI Post-Call Webhook').item.json.body.message.artifact.structuredOutputs['5591e26d-63e0-495e-a585-2527acd6d777'].result.interested }}",
+              "type": "string"
+            },
+            {
+              "id": "60de2bfc-4be3-4daa-bd6d-9019792e3610",
+              "name": "appointment",
+              "value": "={{ $('VAPI Post-Call Webhook').item.json.body.message.call.createdAt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1744,
+        384
+      ],
+      "id": "0c731df4-359a-4087-bc91-91d8c0972276",
+      "name": "Extract data"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Extract Data (Email Pending)').item.json.Email }}",
+        "subject": "={{ $('Extract Data (Email Pending)').item.json.Company }}, this could change how you operate",
+        "message": "=<!DOCTYPE html> <html> <head>   <meta charset=\"UTF-8\">   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">   <title>Quick Follow-Up – Genius Astra</title> </head> <body style=\"margin:0;padding:0;background:#f4f4f4;font-family:Arial,sans-serif;font-size:14px;color:#222222;line-height:1.7;\">  <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"background:#f4f4f4;padding:32px 0;\">   <tr>     <td align=\"center\">        <table width=\"560\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"max-width:560px;background:#ffffff;border-radius:6px;overflow:hidden;border:1px solid #e0e0e0;\">          <!-- HEADER -->         <tr>           <td style=\"background:#111111;padding:18px 28px;\">             <p style=\"margin:0;font-size:11px;font-weight:700;color:#F5C518;letter-spacing:2px;text-transform:uppercase;\">Genius Astra</p>             <p style=\"margin:4px 0 0 0;font-size:18px;font-weight:700;color:#ffffff;\">Just checking in 👋</p>           </td>         </tr>          <!-- GOLD LINE -->         <tr>           <td style=\"background:#F5C518;height:3px;font-size:0;line-height:0;\">&nbsp;</td>         </tr>          <!-- BODY -->         <tr>           <td style=\"padding:28px 28px 24px 28px;\">              <p style=\"margin:0 0 16px 0;\">Hi <strong>{{ $('Extract Data (Email Pending)').item.json.Company }} </strong>,</p>              <p style=\"margin:0 0 16px 0;\">               Just wanted to quickly follow up in case you missed our previous message.             </p>              <p style=\"margin:0 0 16px 0;\">               We help businesses like yours <strong>Growth your social media, marketing and more!</strong> using AI —               so your team can focus on what actually moves the needle.             </p>              <!-- HIGHLIGHT BOX -->             <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\"                    style=\"background:#f9f9f9;border-left:3px solid #F5C518;border-radius:0 4px 4px 0;margin:0 0 20px 0;\">               <tr>                 <td style=\"padding:14px 18px;\">                   <p style=\"margin:0 0 6px 0;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;letter-spacing:0.5px;\">What we can do for you</p>                   <p style=\"margin:0 0 4px 0;font-size:13px;color:#333333;\">⚡ Automate repetitive tasks &amp; follow-ups</p>                   <p style=\"margin:0 0 4px 0;font-size:13px;color:#333333;\">📞 AI-powered outbound &amp; inbound calls</p>                   <p style=\"margin:0;font-size:13px;color:#333333;\">🚀 Optimize & Improving your content in Social Media;</p>                 </td>               </tr>             </table>              <p style=\"margin:0 0 20px 0;\">               If you're curious, feel free to reply to this email or click below to learn more.               We may also reach out with a quick call to see how we can help.             </p>              <!-- CTA BUTTON -->             <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"margin:0 0 8px 0;\">               <tr>                 <td style=\"background:#F5C518;border-radius:4px;\">                   <a href=\"https://geniusastra.com\"                      style=\"display:inline-block;padding:11px 26px;font-size:13px;font-weight:700;color:#111111;text-decoration:none;\">                     View More Details &rarr;                   </a>                 </td>               </tr>             </table>            </td>         </tr>          <!-- DIVIDER -->         <tr>           <td style=\"padding:0 28px;\">             <div style=\"border-top:1px solid #eeeeee;\"></div>           </td>         </tr>          <!-- FIRMA -->         <tr>           <td style=\"background:#F5C518;height:3px;font-size:0;line-height:0;\">&nbsp;</td>         </tr>          <tr>           <td style=\"background:#111111;padding:20px 24px 16px 24px;\">             <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">               <tr>                 <td style=\"vertical-align:top;padding-right:20px;\">                   <p style=\"margin:0 0 2px 0;font-size:17px;font-weight:700;color:#F5C518;letter-spacing:0.5px;line-height:1.2;\">Stephanny Gutierrez</p>                   <p style=\"margin:0 0 10px 0;font-size:12px;color:#ffffff;letter-spacing:0.3px;\">Creative Director · Genius Astra</p>                   <p style=\"margin:0 0 3px 0;font-size:11px;color:#999999;\">📍 Queens, New York</p>                   <p style=\"margin:0 0 3px 0;font-size:11px;color:#999999;\">🌐 <a href=\"https://geniusastra.com\" style=\"color:#F5C518;text-decoration:none;\">geniusastra.com</a></p>                   <p style=\"margin:0;font-size:11px;color:#999999;\">📸 <a href=\"https://instagram.com/geniusastra\" style=\"color:#F5C518;text-decoration:none;\">@geniusastra</a></p>                 </td>                 <td style=\"border-left:1px solid #333333;padding:0 0 0 20px;vertical-align:top;\">                   <p style=\"margin:0 0 8px 0;font-size:9px;font-weight:700;color:#F5C518;letter-spacing:1px;text-transform:uppercase;\">Our Services</p>                   <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">                     <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">⚡ AI Automation</span></td></tr>                     <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">🌍 Global Multilingual Expansion</span></td></tr>                     <tr><td style=\"padding:0 0 4px 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">✦ AI Branding</span></td></tr>                     <tr><td style=\"padding:0 0 0 0;\"><span style=\"background:#1a1a1a;border:1px solid #333;color:#cccccc;font-size:10px;padding:2px 8px;border-radius:3px;\">🚀 Strategic Launch</span></td></tr>                   </table>                 </td>               </tr>             </table>           </td>         </tr>          <!-- CTA BANNER -->         <tr>           <td style=\"background:#F5C518;padding:10px 24px;\">             <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">               <tr>                 <td style=\"vertical-align:middle;\">                   <p style=\"margin:0;font-size:11px;font-weight:700;color:#111111;\">📊 Want a FREE market analysis for your business?</p>                 </td>                 <td style=\"vertical-align:middle;text-align:right;white-space:nowrap;\">                   <a href=\"https://geniusastra.com\"                      style=\"background:#111111;color:#F5C518;font-size:10px;font-weight:700;padding:5px 12px;text-decoration:none;border-radius:3px;display:inline-block;\">                     Schedule Here &rarr;                   </a>                 </td>               </tr>             </table>           </td>         </tr>          <!-- FOOTER -->         <tr>           <td style=\"background:#0a0a0a;padding:10px 24px;\">             <p style=\"margin:0;font-size:9px;color:#555555;line-height:1.5;text-align:center;\">               This email and its attachments are confidential and intended exclusively for the indicated recipient.               &copy; 2025 Genius Astra &mdash;               <a href=\"https://geniusastra.com/pages/contact\" style=\"color:#555555;text-decoration:none;\">geniusastra.com</a>             </p>           </td>         </tr>          <!-- GOLD LINE BOTTOM -->         <tr>           <td style=\"background:#F5C518;height:2px;font-size:0;line-height:0;\">&nbsp;</td>         </tr>        </table>     </td>   </tr> </table>  </body> </html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1040,
+        192
+      ],
+      "id": "d7d60d19-86fa-4c2b-9170-ad86118b48b3",
+      "name": "Send Reminder",
+      "webhookId": "11d1ca75-6c17-4f22-83d1-1e1d20f5aa9f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "rGsdLu9a3bbdpBQ9",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "lead_id",
+              "lookupValue": "={{ $('Extract Data (Email Pending)').item.json.lead_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1440,
+        192
+      ],
+      "id": "0473273b-77d1-42d7-b9bc-c62e3256aff7",
+      "name": "Get status",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "days"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1232,
+        192
+      ],
+      "id": "d6ac8c1a-186d-425f-b592-99cca3fe2e7c",
+      "name": "Wait 1 Day",
+      "webhookId": "0be95a8b-7452-4ec3-9443-f038a7670e46"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "send-email",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        304,
+        192
+      ],
+      "id": "ee53812f-8715-4911-acee-d8f0cf049ddc",
+      "name": "Brave email",
+      "webhookId": "6c4c3be3-e15d-4f1a-aee4-8cc33013a084"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        368,
+        -208
+      ],
+      "id": "78f28606-8cd7-4f42-8598-543400bf896b",
+      "name": "Schedule Trigger (Mon-Fri 9AM)"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "lead_id": "={{ $('Get Pending Leads').item.json.lead_id }}",
+            "Email_listo": "TRUE",
+            "Status": "pending"
+          },
+          "matchingColumns": [
+            "lead_id"
+          ],
+          "schema": [
+            {
+              "id": "lead_id",
+              "displayName": "lead_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Company",
+              "displayName": "Company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "County",
+              "displayName": "County",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Website",
+              "displayName": "Website",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Address",
+              "displayName": "Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Neighborhood",
+              "displayName": "Neighborhood",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Phone",
+              "displayName": "Phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Category",
+              "displayName": "Category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Instagram",
+              "displayName": "Instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email_listo",
+              "displayName": "Email_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reminder_sent",
+              "displayName": "Reminder_sent",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Call_date",
+              "displayName": "Call_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Call_listo",
+              "displayName": "Call_listo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Interested",
+              "displayName": "Interested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Follow_up",
+              "displayName": "Follow_up",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Analysis_call",
+              "displayName": "Analysis_call",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1472,
+        -240
+      ],
+      "id": "63319c48-cd06-4695-8d0d-e5f397bb6c9f",
+      "name": "Mark as Sent",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        16,
+        -192
+      ],
+      "id": "06135f1b-f20c-47fa-8795-18e7f6c5e891",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "7f142c74-06c9-4b0c-a11a-c07b66e76340",
+              "leftValue": "={{ $json.Email_listo }}",
+              "rightValue": "TRUE",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "8546cea1-fc0c-4835-a596-a85ee8880c72",
+              "leftValue": "={{ $json.Email_listo }}",
+              "rightValue": "TRUE",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        768,
+        -208
+      ],
+      "id": "c1cee901-a305-4380-a268-bdb74dcb5f66",
+      "name": "If1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        976,
+        -48
+      ],
+      "id": "a401ac53-ea9d-40c7-9494-8918a21cf7c6",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brevo.com/v3/smtp/email",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "api-key",
+              "value": "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"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "sender.name",
+              "value": "Genius Astra - Valeri G"
+            },
+            {
+              "name": "sender.email",
+              "value": "otunservices@geniusastradev.store"
+            },
+            {
+              "name": "to[0].email",
+              "value": "={{ $('Get Pending Leads').item.json.Email }}"
+            },
+            {
+              "name": "to[0].name",
+              "value": "={{ $('Get Pending Leads').item.json.Company }}"
+            },
+            {
+              "name": "templateId",
+              "value": "={{ 1 }}"
+            },
+            {
+              "name": "params.Company",
+              "value": "={{ $('Get Pending Leads').item.json.Company }}"
+            },
+            {
+              "name": "params.Neighborhood",
+              "value": "={{ $('Get Pending Leads').item.json.Neighborhood }}"
+            },
+            {
+              "name": "params.County",
+              "value": "={{ $('Get Pending Leads').item.json.County }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1168,
+        -224
+      ],
+      "id": "fd02c187-dd63-441e-a89a-c377a8f66e40",
+      "name": "Send Email via Brevo",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WPvJ-eLjfEQTsY7rjldEWhY0Rl0BUYCcbqYr1ERRIJQ",
+          "mode": "list",
+          "cachedResultName": "Leads + Email Scrapper"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1"
+        },
+        "filtersUI": {
+          "values": []
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        560,
+        -208
+      ],
+      "id": "df116096-179d-47ef-9273-2d613c3eebbc",
+      "name": "Get Pending Leads",
+      "alwaysOutputData": false,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "ZVkYY5blo2ajMfxn",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "c2e15f1c-0aa9-48a4-9e18-309310b9c17a",
+              "leftValue": "={{ $('Get Pending Leads').item.json.Email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.3,
+      "position": [
+        992,
+        -224
+      ],
+      "id": "72cadda5-1c24-47f9-ad5d-07613a1b1ed3",
+      "name": "Filter2"
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2880,
+        224
+      ],
+      "id": "ef9c480d-0327-4700-a8d7-4e08dd855ed1",
+      "name": "Wait send appointment",
+      "webhookId": "e657bd00-4648-42df-9139-e91ba8c1f8fa"
+    },
+    {
+      "parameters": {
+        "content": "## Update v 1.1.3 5-7-2026 1:15 AM\nEsta version esta arreglada las condicionales para dirigir aquellos leads que tienen correo y si el campo status y email_lsito estan vacios entocnes pasaran por el if pasaran luego al filtro paracorrobar solo los que tienen email los que no simplemente son descartafdos por el filtro por tanto no se enviara a Brave ",
+        "height": 208,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1088,
+        -464
+      ],
+      "id": "c22870cf-3535-4933-95c8-39c1a198df4b",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {
+    "Brave email": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.geniusastradev.store",
+            "user-agent": "Brevo-webhook/2.0 (+https://developers.brevo.com/docs/how-to-use-webhooks)",
+            "content-length": "572",
+            "accept": "*/*",
+            "accept-encoding": "gzip, br",
+            "cdn-loop": "cloudflare; loops=1",
+            "cf-connecting-ip": "172.246.241.64",
+            "cf-ipcountry": "FR",
+            "cf-ray": "9ee89f090adeda89-CDG",
+            "cf-visitor": "{\"scheme\":\"https\"}",
+            "cf-warp-tag-id": "f50c00e9-4d8d-4c20-9d10-98d15bb5495e",
+            "connection": "keep-alive",
+            "content-type": "application/json",
+            "x-forwarded-for": "172.246.241.64",
+            "x-forwarded-proto": "https"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id": 1957184,
+            "email": "customerservice@eworldtours.com",
+            "message-id": "<202604181654.82080277661@smtp-relay.mailin.fr>",
+            "date": "2026-04-18 22:53:46",
+            "event": "opened",
+            "subject": "Transform 's Operations with AI Automation",
+            "sending_ip": "10.42.24.24",
+            "ts": 1776567226,
+            "template_id": 1,
+            "ts_epoch": 1776567226535,
+            "ts_event": 1776567226,
+            "link": "",
+            "sender_email": "otunservices@geniusastradev.store",
+            "user_agent": "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)",
+            "device_used": "DESKTOP",
+            "uuid": "1b395522-453b-4682-8c3f-550db0be625f"
+          },
+          "webhookUrl": "https://n8n.geniusastradev.store/webhook/send-email",
+          "executionMode": "production"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Extract Data (Email Pending)": {
+      "main": [
+        [
+          {
+            "node": "Update Email Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Email Status": {
+      "main": [
+        [
+          {
+            "node": "Wait 3 Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 3 Days": {
+      "main": [
+        [
+          {
+            "node": "Send Reminder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Data (Call Pending)": {
+      "main": [
+        [
+          {
+            "node": "Call VAPI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Extract data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "node": "Extract Data (Call Pending)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get data from Gmass": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter status": {
+      "main": [
+        [
+          {
+            "node": "Get data from Gmass",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Call Results": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Conversion ISO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Conversion ISO": {
+      "main": [
+        [
+          {
+            "node": "CAL.COM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CAL.COM": {
+      "main": [
+        [
+          {
+            "node": "Wait send appointment",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VAPI Post-Call Webhook": {
+      "main": [
+        [
+          {
+            "node": "Filter status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract data": {
+      "main": [
+        [
+          {
+            "node": "Update Call Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Reminder": {
+      "main": [
+        [
+          {
+            "node": "Wait 1 Day",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get status": {
+      "main": [
+        [
+          {
+            "node": "Filter1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 1 Day": {
+      "main": [
+        [
+          {
+            "node": "Get status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brave email": {
+      "main": [
+        [
+          {
+            "node": "Extract Data (Email Pending)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger (Mon-Fri 9AM)": {
+      "main": [
+        [
+          {
+            "node": "Get Pending Leads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Filter2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email via Brevo": {
+      "main": [
+        [
+          {
+            "node": "Mark as Sent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Get Pending Leads": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter2": {
+      "main": [
+        [
+          {
+            "node": "Send Email via Brevo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait send appointment": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true
+  },
+  "versionId": "5586c8da-9c7e-4ba4-911e-f7bc80c472e4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "747783bda3f10a4d4023457d44f25ea0576e9cc9460c72700a587b2653a24d87"
+  },
+  "id": "cwAMIOUIOwM02EnR",
+  "tags": []
+}
